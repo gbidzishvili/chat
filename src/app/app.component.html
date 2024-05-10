@@ -1,0 +1,14 @@
+<div class="container">
+  <form >
+    <input placeholder="type message..." [formControl]="chatInput" type="text">
+    <button type="button" (click)="onSubmit()">submit</button>
+  </form>
+  
+    <ul >
+      <li *ngFor="let message of messages" [ngClass]="{ 'msg-sent': sessionStorage?.getItem('session') == '1' }">{{message}}</li>
+    </ul>
+    <div style="display: flex; width: 30%; margin:0 auto;">
+      <button (click)="saveSession(1)">btn1</button>
+      <button (click)="saveSession(2)">btn2</button>
+    </div>
+</div>
